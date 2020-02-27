@@ -4,21 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mapa</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <style>
-
-        body{
-            background-color: red;
-        }
+        body {font-family: "Times New Roman", Georgia, Serif; background-color:khaki;}
         #mapa {
             width: 100%;
             height: 350px;
         }
+        p {
+            font-size: 17px;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: "Playfair Display";
+            letter-spacing: 5px;
+        }
     </style>
 </head>
 <body>
+    <div class="w3-top">
+        <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+          <a href="index.html" class="w3-bar-item w3-button">Index</a>
+          
+          <div class="w3-right w3-hide-small">
+            <a class="w3-bar-item">Luis Daniel Rodríguez Torres</a>
+          </div>
+        </div>
+    </div>
     <div class="container-fluid">
-        <div class="container bg-warning">
+        <div class="container">
             <div class="row m-5">
                 <div class="col-12 p-5">
                     <h1 class="text-center">Google Maps con Bootstrap</h1>
@@ -58,3 +72,4 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyADjOfdGIg-7JiqjoTstMN9el4g-nLhxxA&callback=iniciaMapa" async defer></script>
 </body>
 </html>
+
