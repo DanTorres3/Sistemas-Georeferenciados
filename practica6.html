@@ -50,7 +50,7 @@
             <div class="row m-5">
                 <div class="col-12 p-5">
                     <h1 class="text-center">Mapa en movimiento.</h1>
-                    <div id="mapa"></div>
+                    <div id="map"></div>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
         }
 
         function iniciaMapa() {
-            map = new google.maps.Map(document.getElementById("mapa"), propiedades);
+            map = new google.maps.Map(document.getElementById("map"), propiedades);
             var icono = {
                 url : "https://thumbs.gfycat.com/IcyEmbellishedBushbaby-max-1mb.gif"
             }
@@ -80,7 +80,7 @@
                 },
                 icon : icono,
                 scaledSize : new google.maps.Size(50,50),
-                origin: new google.maps.Point(0,0)
+                map : map
             });
 
             if (navigator.geolocation) {
