@@ -70,11 +70,15 @@
 
         function iniciaMapa() {
             map = new google.maps.Map(document.getElementById("mapa"), propiedades);
+            var icono = {
+                url : "https://thumbs.gfycat.com/IcyEmbellishedBushbaby-max-1mb.gif"
+            }
             var marker = new google.maps.Marker({
                 position: {
                     lat: 0,
                     lng: 0
-                }
+                },
+                icono : icono
             });
 
             if (navigator.geolocation) {
