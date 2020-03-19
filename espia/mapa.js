@@ -44,6 +44,6 @@ function moverPosicion(marker){
         map.panTo(new google.maps.LatLng(pos.lat, pos.lng));
         map.setCenter(pos);
 
-        updatePosition(pos.lat, pos.lng);
+        enviarPosicion(pos.lat, pos.lng);
     });
 }
