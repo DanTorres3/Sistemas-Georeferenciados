@@ -13,6 +13,8 @@ formularioeditar.addEventListener('submit', (e) => {
     idregistro.querySelector('.nombre').value = nombre + ' ';
     idregistro.querySelector('.codigo').value = codigo + ' ';
 
+    alert("El producto '" + formularioeditar.nombreedit.value + "' ha sido modificado con éxito.");
+
     formularioeditar.nombreedit.value = '';
     formularioeditar.codigoedit.value = '';
 
