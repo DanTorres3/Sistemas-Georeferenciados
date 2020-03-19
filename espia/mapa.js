@@ -33,17 +33,15 @@ function iniciaMapa(){
     }
 }
 
-function moverPosicion(marker){
+function moverPosicion(marker) {
     navigator.geolocation.getCurrentPosition(posicion => {
         var pos = {
             lat: posicion.coords.latitude,
             lng: posicion.coords.longitude
         }
-
-        marker.setPosition(new google.maps.LatLng(pos.lat, pos.lng));
-        map.panTo(new google.maps.LatLng(pos.lat, pos.lng));
+        marker.setPosition(new google.maps.LatLng(posicion.coords.latitude, posicion.coords.longitude));
+        map.panTo(new google.maps.LatLng(posicion.coords.latitude, posicion.coords.longitude));
         map.setCenter(pos);
-
         enviarPosicion(pos.lat, pos.lng);
     });
 }
