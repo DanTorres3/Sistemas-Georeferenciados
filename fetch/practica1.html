@@ -46,8 +46,8 @@
             <div class="row m-5">
                 <div class="col-12 p-5">
                     <h1 class="text-center">Lista de países afectados.</h1>
-                    <div id="paises">
-                    </div>
+                    <ul id="paises">
+                    </ul>
                 </div>
             </div>
         </div>
@@ -59,7 +59,7 @@
             response.json().then(function (datos) {
                 datos.forEach(registro => {
                     console.log(registro);
-                    let nombre = document.createElement("p");
+                    let nombre = document.createElement("li");
                     nombre.textContent = "País: " + registro.country + ", casos: " + registro.cases;
                     paises.appendChild(nombre);
                 });
