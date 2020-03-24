@@ -96,7 +96,7 @@
                                                     content: información
                                                 });
                                                 var icono = {
-                                                    url: "https://cdn.icon-icons.com/icons2/1512/PNG/512/31_104880.png",
+                                                    url: "https://media0.giphy.com/media/jwE4ScirAX5P5Pk6HF/source.gif",
                                                     scaledSize: new google.maps.Size(50, 50),
                                                     origin: new google.maps.Point(0, 0),
                                                     anchor: new google.maps.Point(0, 0)
@@ -105,7 +105,7 @@
                                                     map: map,
                                                     icon: icono,
                                                     position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
-                                                    title: marcador.CountryName + registro.cases
+                                                    title: marcador.CountryName + " " + registro.cases
                                                 });
                                                 marker.addListener('click', function () {
                                                     infowindow.open(map, marker);
