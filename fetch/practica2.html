@@ -44,11 +44,9 @@
     <div class="container-fluid">
         <div class="container">
             <div class="row m-5">
-                <div class="col-12 p-5">
-                    <h1 class="text-center">Lista de países afectados.</h1>
-                    <hr>
-                    <ul class="list-group" id="paises">
-                    </ul>
+                <div class="col-12 p-5" id="paises">
+                    <h1 class="text-center">COVID-19</h1>
+                    <h4>Lista de países.</h4>
                 </div>
             </div>
         </div>
@@ -56,17 +54,25 @@
 
     <script>
         var paises = document.getElementById("paises");
-        fetch('datos.json').then(function (response) {
+        fetch('https://corona.lmao.ninja/countries').then(function (response) {
             response.json().then(function (datos) {
                 datos.forEach(registro => {
-                    console.log(registro);
+                    
+                    let renglon = document.createElement("div");
+                    renglon.className = "row";
+                    paises.appendChild(renglon);
+
+                    let columna = document.createElement("div");
+                    columna.className = "col-12";
+                    paises.appendChild(columna);
+
                     let nombre = document.createElement("li");
                     nombre.textContent = "País: " + registro.country + ", casos: " + registro.cases;
-                    nombre.className = "list-group-item list-group-item-light";
+                    nombre.className = "list-group-item list-group-item-danger";
                     paises.appendChild(nombre);
                 });
             });
-        }).catch(function(error) {
+        }).catch(function (error) {
             console.log("Hubo un problema con la petición de Fetch: " + error.message);
         });
     </script>
