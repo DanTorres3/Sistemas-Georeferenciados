@@ -83,20 +83,27 @@
                                     respuesta.json().then(function (datospaises) {
                                         datospaises.forEach(registro => {
                                             if (registro.country == marcador.CountryName) {
-                                                var información = "<strong>País:</strong> " + registro.country + 
-                                                                  "<br><strong>Casos:</strong> " + registro.cases + 
-                                                                  "<br><strong>Nuevos hoy:</strong> " + registro.todayCases + 
-                                                                  "<br><strong>Muertes:</strong> " + registro.deaths + 
-                                                                  "<br><strong>Muertes Hoy:</strong> " + registro.todayDeaths + 
-                                                                  "<br><strong>Recuperados:</strong> " + registro.recovered + 
-                                                                  "<br><strong>Activos:</strong> " + registro.active + 
-                                                                  "<br><strong>Críticos:</strong> " + registro.critical + 
-                                                                  "<br><strong>Casos por millón:</strong> " + registro.casesPerOneMillion;
+                                                var información = "<strong>País:</strong> " + registro.country +
+                                                    "<br><strong>Casos:</strong> " + registro.cases +
+                                                    "<br><strong>Nuevos hoy:</strong> " + registro.todayCases +
+                                                    "<br><strong>Muertes:</strong> " + registro.deaths +
+                                                    "<br><strong>Muertes Hoy:</strong> " + registro.todayDeaths +
+                                                    "<br><strong>Recuperados:</strong> " + registro.recovered +
+                                                    "<br><strong>Activos:</strong> " + registro.active +
+                                                    "<br><strong>Críticos:</strong> " + registro.critical +
+                                                    "<br><strong>Casos por millón:</strong> " + registro.casesPerOneMillion;
                                                 var infowindow = new google.maps.InfoWindow({
                                                     content: información
                                                 });
+                                                var icono = {
+                                                    url: "https://media0.giphy.com/media/jwE4ScirAX5P5Pk6HF/source.gif",
+                                                    scaledSize: new google.maps.Size(50, 50),
+                                                    origin: new google.maps.Point(0, 0),
+                                                    anchor: new google.maps.Point(0, 0)
+                                                }
                                                 let marker = new google.maps.Marker({
                                                     map: map,
+                                                    icon: icono,
                                                     position: new google.maps.LatLng(marcador.CapitalLatitude, marcador.CapitalLongitude),
                                                     title: marcador.CountryName + registro.cases
                                                 });
