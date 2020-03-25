@@ -83,7 +83,8 @@
                                     respuesta.json().then(function (datospaises) {
                                         datospaises.forEach(registro => {
                                             if (registro.country == marcador.CountryName) {
-                                                var información = "<strong>País:</strong> " + registro.country +
+                                                var información = "<img height='40' width='80' src='"+registro.countryInfo.flag+"'> " + 
+                                                    "<br><strong>País:</strong> " + registro.country +
                                                     "<br><strong>Casos:</strong> " + registro.cases +
                                                     "<br><strong>Nuevos hoy:</strong> " + registro.todayCases +
                                                     "<br><strong>Muertes:</strong> " + registro.deaths +
