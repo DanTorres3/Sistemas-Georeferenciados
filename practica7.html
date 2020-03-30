@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <script src="https://kit.fontawesome.com/725910d27b.js" crossorigin="anonymous"></script>
+
     <style>
         body {
             font-family: "Times New Roman", Georgia, Serif;
@@ -53,18 +56,18 @@
                     <div id="map"></div>
                 </div>
             </div>
-            <div class="row p-2">
+            <div class="row">
                 <div class="col-3 text-center">
-                    <button class="btn btn-outline-success" id="btnroadmap">Roadmap</button>
+                    <button class="btn btn-outline-primary" id="btnroadmap"><i class="fas fa-route"></i>Roadmap</button>
                 </div>
                 <div class="col-3 text-center">
-                    <button class="btn btn-outline-success" id="btnsatellite">Satellite</button>
+                    <button class="btn btn-outline-success" id="btnsatellite"><i class="fas fa-satellite"></i>Satellite</button>
                 </div>
                 <div class="col-3 text-center">
-                    <button class="btn btn-outline-success" id="btnhybrid">Hybrid</button>
+                    <button class="btn btn-outline-warning" id="btnhybrid"><i class="fas fa-broadcast-tower"></i>Hybrid</button>
                 </div>
                 <div class="col-3 text-center">
-                    <button class="btn btn-outline-success" id="btnterrain">Terrain</button>
+                    <button class="btn btn-outline-danger" id="btnterrain"><i class="fas fa-road"></i>Terrain</button>
                 </div>
             </div>
         </div>
@@ -78,7 +81,11 @@
             { lat: 23.0761814, lng: -109.7253332 }, //Casa de Kevin
             { lat: 21.3519926, lng: -101.9409363 }, //Casa de Jonathan
             { lat: 19.432132, lng: -99.042158 }, //Casa de Yisus
-            { lat: 20.914836, lng: -101.738627 } //Casa de Juan
+            { lat: 20.914836, lng: -101.738627 }, //Casa de Juan
+            { lat: 21.1045876, lng: -101.6426239 }, //Casa de Sofia
+            { lat: 21.1406536, lng: -101.6985011 }, //Casa de Jorge
+            { lat: 21.1063827, lng: -101.6908361 }, //Casa de Luis
+            { lat: 20.5089011, lng: -100.4035122 } //Casa de Josue
         ];
 
         var coordenadas = {
@@ -95,7 +102,7 @@
         function iniciaMapa() {
             map = new google.maps.Map(document.getElementById("map"), propiedades);
 
-            var labels = "DMKJYJ";
+            var labels = "ADMKJYJSJLJ";
 
             var marcadores = [];
 
@@ -123,20 +130,20 @@
                 }
             );
 
-            document.getElementById("btnroadmap").addEventListener("click", function(){
+            document.getElementById("btnroadmap").addEventListener("click", function () {
                 map.setMapTypeId('roadmap');
             });
 
-            document.getElementById("btnsatellite").addEventListener("click", function(){
+            document.getElementById("btnsatellite").addEventListener("click", function () {
                 map.setMapTypeId('satellite');
- 
+
             });
 
-            document.getElementById("btnhybrid").addEventListener("click", function(){
+            document.getElementById("btnhybrid").addEventListener("click", function () {
                 map.setMapTypeId('hybrid');
             });
 
-            document.getElementById("btnterrain").addEventListener("click", function(){
+            document.getElementById("btnterrain").addEventListener("click", function () {
                 map.setMapTypeId('terrain');
             });
         }
