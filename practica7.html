@@ -85,7 +85,7 @@
 
     <script>
         var localidades = [ //Casas de mis amigos
-            { lat: 21.1101462, lng: -101.729329 }, //Mi casa
+            { lat: 21.1101462, lng: -101.729329, name: 'Daniel' }, //Mi casa
             { lat: 21.161068, lng: -101.6883536 }, //Casa de Marco
             { lat: 23.0761814, lng: -109.7253332 }, //Casa de Kevin
             { lat: 21.3519926, lng: -101.9409363 }, //Casa de Jonathan
@@ -94,7 +94,8 @@
             { lat: 21.1045876, lng: -101.6426239 }, //Casa de Sofia
             { lat: 21.1406536, lng: -101.6985011 }, //Casa de Jorge
             { lat: 21.1063827, lng: -101.6908361 }, //Casa de Luis
-            { lat: 20.5089011, lng: -100.4035122 } //Casa de Josue
+            { lat: 20.5089011, lng: -100.4035122 }, //Casa de Josue
+            { lat: 20.6910129, lng: -101.3172804} //Casa de Andrei
         ];
 
         var coordenadas = {
@@ -111,7 +112,7 @@
         function iniciaMapa() {
             map = new google.maps.Map(document.getElementById("map"), propiedades);
 
-            var labels = "ADMKJYJSJLJ";
+            var labels = "ADMKJYJSJLJA";
 
             var marcadores = [];
 
@@ -123,7 +124,8 @@
                 let marcador = new google.maps.Marker({
                     position: localidad,
                     map: map,
-                    label: labels[cuenta % labels.length]
+                    label: labels[cuenta % labels.length],
+                    title: localidad.name
                 });
 
                 marcadores.push(marcador);
