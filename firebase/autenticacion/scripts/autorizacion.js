@@ -91,7 +91,6 @@ function mensajeError(codigo) {
   }
 
 const formaingresar =  document.getElementById('formaingresar');
-const salle = document.getElementById('salle');
 
 formaingresar.addEventListener('submit',(e)=>{
     e.preventDefault();
@@ -124,11 +123,7 @@ entrarGoogle = () => {
                 <p>Correo: ${ user.email}</p>
                 <img src="${ user.photoURL }" width="50px">
             `;
-            const htmls = `
-                <img src="${ user.photoURL }" width="50" >
-            `;
             datosdelacuenta.innerHTML = html;
-            salle.innerHTML = htmls;
             $('#ingresarmodal').modal('hide');
             formaingresar.reset();
             formaingresar.querySelector('.error').innerHTML = '';
