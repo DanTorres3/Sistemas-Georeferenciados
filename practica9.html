@@ -74,7 +74,7 @@
     <script>
         function iniciaMapa() {
 
-            var styleMapType = new google.maps.StyledMapType(
+            var styledMapType = new google.maps.StyledMapType(
                 [
                     [
                         {
@@ -336,14 +336,14 @@
                 },
                 zoom: 14,
                 mapTypeControlOptions: {
-                    mapTypeIds: ['roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
+                    mapTypeIds : [ 'roadmap', 'satellite', 'hybrid', 'terrain', 'style_map']
                 }
             };
 
             var mapa = document.getElementById("mapa");
             var map = new google.maps.Map(mapa, propiedades);
 
-            map.mapTypes.set('style_map', styleMapType);
+            map.mapTypes.set('style_map', styledMapType);
             map.setMapTypeId('style_map');
         }
     </script>
