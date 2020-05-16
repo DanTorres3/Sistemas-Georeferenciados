@@ -129,6 +129,10 @@ entrarGoogle = () => {
     firebase.auth().signInWithPopup(provider).then(function(result) {
         var token = result.credential.accessToken;
         console.log(token);
+        db.collection('usuarios').doc(user.uid).set({
+            nombre: result.user.displayName,
+            photoURL: result.user.photoURL ? result.user.photoURL : null
+        });
         var user = result.user;
             console.log(user);
             const html = `
@@ -140,7 +144,17 @@ entrarGoogle = () => {
             $('#ingresarmodal').modal('hide');
             formaingresar.reset();
             formaingresar.querySelector('.error').innerHTML = '';
+            if(navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition( position => {
+                    db.collection('usuarios').doc(user.uid).update({
+                        coordenadas : {
+                            latitude: position.coords.latitude,
+                            longitude: position.coords.longitude
+                        }
+                    });
+                });
+            }
         }).catch(function(error) {
             console.log(error);
     });
-}
+};
