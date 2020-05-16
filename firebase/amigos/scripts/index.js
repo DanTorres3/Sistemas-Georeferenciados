@@ -50,6 +50,6 @@ const obtieneAmigos = (data) => {
         });
     }
     else{
-        map.innerHTML = '<p class="text-center">Ingrese con sus claves para ver el mapa.</p>';
+        mapa.innerHTML = '<p class="text-center">Ingrese con sus claves para ver el mapa.</p>';
     }
 };
