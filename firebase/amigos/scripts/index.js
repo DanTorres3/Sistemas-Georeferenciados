@@ -36,7 +36,7 @@ const obtieneAmigos = (data) => {
     var map = new google.maps.Map(mapa, propiedades);
 
     data.forEach( doc => {
-        informacion = new.google.maps.InfoWindow;
+        informacion = new google.maps.InfoWindow;
 
         var pos = {
             lat: doc.data().coordenadas.latitude,
@@ -46,5 +46,5 @@ const obtieneAmigos = (data) => {
         informacion.setPosition(pos);
         informacion.setContent(doc.data().nombre);
         informacion.open(map);
-    })
-}
+    });
+};
