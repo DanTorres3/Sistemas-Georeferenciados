@@ -132,8 +132,8 @@ entrarGoogle = () => {
             nombre: result.user.displayName,
             photoURL: result.user.photoURL ? result.user.photoURL : null
         });
-        console.log(token);
-        console.log(user.uid);
+        console.log('Token: ' + token);
+        console.log('ID:' + user.uid);
         var user = result.user;
             console.log(user);
             const html = `
