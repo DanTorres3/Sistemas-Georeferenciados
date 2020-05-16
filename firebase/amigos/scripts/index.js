@@ -48,3 +48,4 @@ const obtieneAmigos = (data) => {
         informacion.open(map);
     });
 };
+
