@@ -128,11 +128,12 @@ entrarGoogle = () => {
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
         var token = result.credential.accessToken;
-        console.log(token);
         db.collection('usuarios').doc(user.uid).set({
             nombre: result.user.displayName,
             photoURL: result.user.photoURL ? result.user.photoURL : null
         });
+        console.log(token);
+        console.log(user.uid);
         var user = result.user;
             console.log(user);
             const html = `
