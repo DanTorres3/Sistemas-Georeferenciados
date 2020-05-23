@@ -168,28 +168,26 @@
                     position: latLng,
                     map: mapa4
                 });
-
                 mapa4.panTo(latLng);
-
             }
 
             /*     MAPA5      */
 
             var mapa5 = new google.maps.Map(document.getElementById('mapa5'), propiedades);
 
-            var infowindow = new google.maps.InfoWindow({
+            var infowindow2 = new google.maps.InfoWindow({
                 content: 'Haz click para obtener las coordenadas',
                 position: coordenadas
             });
 
-            infowindow.open(mapa5);
+            infowindow2.open(mapa5);
 
             mapa5.addListener('click', function (evento) {
-                infowindow.close();
+                infowindow2.close();
 
-                infowindow = new google.maps.InfoWindow({ position: evento.latLng });
-                infowindow.setContent(evento.latLng.toString());
-                infowindow.open(mapa5);
+                infowindow2 = new google.maps.InfoWindow({ position: evento.latLng });
+                infowindow2.setContent(evento.latLng.toString());
+                infowindow2.open(mapa5);
 
             });
 
