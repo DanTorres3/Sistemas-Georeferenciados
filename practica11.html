@@ -92,12 +92,11 @@
 
         function iniciaMapa() {
 
-
-            var coordenadas = { lat: 21.152639, lng: -101.711598 };
+            var coordenadas = { lat: 21.1101462, lng: -101.7293290 };
 
             var propiedades1 = {
                 center: coordenadas,
-                zoom: 12
+                zoom: 16
             };
 
             var mapa1 = new google.maps.Map(document.getElementById('mapa1'), propiedades1);
@@ -105,7 +104,7 @@
 
             var propiedades2 = {
                 center: coordenadas,
-                zoom: 12,
+                zoom: 16,
                 disableDefaultUI: true
             };
 
@@ -113,7 +112,7 @@
 
             var propiedades3 = {
                 center: coordenadas,
-                zoom: 12,
+                zoom: 16,
                 zoomControl: false,
                 scaleControl: false
             };
@@ -123,7 +122,7 @@
 
             var propiedades4 = {
                 center: coordenadas,
-                zoom: 12,
+                zoom: 16,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                     style: google.maps.MapTypeControlStyle.DROPDOWN_MENU,
@@ -136,7 +135,7 @@
 
             var propiedades5 = {
                 center: coordenadas,
-                zoom: 12,
+                zoom: 16,
                 mapTypeControl: true,
                 mapTypeControlOptions: {
                     style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
@@ -149,7 +148,7 @@
                 scaleControl: true,
                 streetViewControl: true,
                 streetViewControlOptions: {
-                    position: google.maps.ControlPosition.LEFT_TOP
+                    position: google.maps.ControlPosition.LEFT_BOTTOM
                 },
                 fullscreenControl: true
 
@@ -166,7 +165,7 @@
 
             var propiedades6 = {
                 center: coordenadas,
-                zoom: 12,
+                zoom: 16,
                 restriction: {
                     latLngBounds: limites,
                     strictBounds: false
