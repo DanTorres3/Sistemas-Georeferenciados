@@ -51,38 +51,34 @@
         </div>
     </div>
     <br><br><br>
-    <div class="container-fluid">
-        <div class="container">
+        <div class="container text-center small">
             <div class="row m-2">
                 <div class="col-12">
-                    <h1 class="text-center">Watch.</h1>
-                    <div id="map"></div>
+                    <h1 class="text-center">Watch Position.</h1>
                 </div>
-                <div class="col-2"></div>
-                <div class="col-3">
-                    <button class="btn btn-sm btn-primary" id="boton">WatchPosition</button>
+                <div class="col-12" id="map"></div>
+                <div class="col-1 p-3"></div>
+                <div class="col-5 p-3">
+                    <button class="btn btn-sm btn-primary" id="boton"><i class="fas fa-play"> Start Watch</i></button>
                 </div>
-                <div class="col-3"></div>
-                <div class="col-3">
-                    <button class="btn btn-sm btn-danger" id="botondetener">Detener watch</button>
+                <div class="col-5 p-3">
+                    <button class="btn btn-sm btn-danger" id="botondetener"><i class="fas fa-stop"> Stop Watch</i></button>
                 </div>
+                <div class="col-1 p-3"></div>
             </div>
             <div class="row m-2">
                 <div class="col-12" id="datos"></div>
             </div>
         </div>
 
-        <div id="map"></div>
-    </div>
-
     <script>
         function iniciaMapa() {
 
             var propiedades = {
                 center: {
-                    lat: 21.152639, lng: -101.711598
+                    lat: 21.1101462, lng: -101.7293290
                 },
-                zoom: 12
+                zoom: 17
 
             };
 
@@ -109,8 +105,8 @@
 
             var positionOptions = {
                 enableHighAccuracy: true,
-                timeout: 10 * 1000,  //10 segundos
-                maximumAge: 30 * 1000  //30 segundos
+                timeout: 10 * 1000,  
+                maximumAge: 30 * 1000  
             };
 
 
@@ -137,7 +133,7 @@
                             <p>Coordenadas: ${ coordenadas}</p>
                             <p>Exactitud: ${ exactitud}</p>
                             <p>Altitud: ${ altitud}</p>
-                            <p>Velocidad: ${ velocidad}</p>
+                            <p>Velocidad: ${ velocidad + 'mtrs/seg'} </p>
                             <p>Fecha y hora: ${ fechayhora}</p>
                         `;
 
